@@ -1,0 +1,13 @@
+{
+    "type": "module",
+    "scripts": {
+      "start": "node server.mjs"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "fs": "^0.0.1-security",
+      "iptv-playlist-parser": "^1.2.0",
+      "path": "^0.12.7",
+      "url": "^0.11.0"
+    }
+  }
