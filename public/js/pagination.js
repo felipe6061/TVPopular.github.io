@@ -1,3 +1,29 @@
+function checkChannelStatus(channel) {
+  return new Promise((resolve) => {
+    const video = document.createElement('video');
+    const player = videojs(video, {
+      techOrder: ['html5'],
+      html5: {
+        hls: {
+          overrideNative: true
+        }
+      }
+    });
+
+    player.src({ src: channel.streamUrl, type: 'application/vnd.apple.mpegurl' });
+    
+    player.on('loadedmetadata', () => {
+      resolve({ ...channel, status: true });
+      player.dispose();
+    });
+
+    player.on('error', () => {
+      resolve({ ...channel, status: false });
+      player.dispose();
+    });
+  });
+}
+
 // Variáveis globais para armazenar os canais e o estado da página
 let channels = [];
 const channelsPerPage = 20;
@@ -46,6 +72,7 @@ function parseM3U(content) {
     return acc;
   }, { channels: [], currentChannel: null }).channels;
 }
+
 
 
 // Função para renderizar uma página de canais
@@ -140,11 +167,15 @@ function updatePagination(page) {
 }
 
 // Função para reproduzir um canal
-function playChannel(url) {
-  const player = videojs('player');
-  player.src({ src: url, type: 'application/x-mpegURL' });
-  player.play();
-}
+var player = videojs('my-video', {
+  controls: true,
+  autoplay: false,
+  preload: 'auto',
+  vhs: {
+      // VHS options here
+  }
+});
+
 
 // Inicializa a primeira página
 renderPage(1);
