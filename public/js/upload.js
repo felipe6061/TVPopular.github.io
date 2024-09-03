@@ -1,28 +1,36 @@
 // Função para lidar com o clique no botão de upload
-document.getElementById('upload-button').addEventListener('click', () => {
+document.getElementById('upload-button').addEventListener('click', async () => {
   const fileInput = document.getElementById('playlist');
   const file = fileInput.files[0];
 
   if (file) {
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      const fileContent = event.target.result;
-
-      // Processa o conteúdo do arquivo (m3u8 ou m3u)
+    try {
+      const fileContent = await readFileAsText(file);
       const channels = parseM3U(fileContent);
-
-      // Não renderiza os canais; apenas faz o processamento
-      // Caso precise utilizar canais para outras funcionalidades, você pode fazê-lo aqui
 
       // Exemplo: Apenas logar os canais no console
       console.log('Canais processados:', channels);
-    };
 
-    reader.readAsText(file); // Lê o arquivo como texto
+      // Aqui você pode tomar outras ações com os canais processados
+
+    } catch (error) {
+      alert('Erro ao processar o arquivo. Verifique o formato do arquivo e tente novamente.');
+      console.error('Erro:', error);
+    }
   } else {
     alert('Por favor, selecione um arquivo de playlist.');
   }
 });
+
+// Função para ler o arquivo como texto
+function readFileAsText(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (event) => resolve(event.target.result);
+    reader.onerror = (error) => reject(error);
+    reader.readAsText(file);
+  });
+}
 
 // Função para fazer o parsing do conteúdo M3U
 function parseM3U(content) {

@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
 const upload = multer({
   dest: 'uploads/',
   fileFilter: (req, file, cb) => {
-    if (file.mimetype === 'application/x-mpegURL' || file.originalname.endsWith('.m3u')) {
+    if (file.mimetype === 'application/x-mpegURL' || file.originalname.endsWith('.m3u') || file.originalname.endsWith('.m3u8')) {
       cb(null, true);
     } else {
       cb(new Error('Tipo de arquivo inválido. Apenas arquivos .m3u e .m3u8 são aceitos.'));
@@ -34,13 +34,6 @@ app.use(cors());
 
 // Configuração para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Middleware para configurar o cabeçalho CORS manualmente (opcional, se desejar personalizar mais)
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
 
 // Armazena os canais em memória
 let channels = [];

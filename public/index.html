@@ -12,7 +12,7 @@
   <div class="container">
     <!-- Container do player de vídeo -->
     <div id="player-container" class="player-container mb-4">
-      <video id="player" class="player video-js vjs-default-skin w-100" controls preload="auto" height="360"></video>
+      <video id="my-video" class="video-js vjs-default-skin w-100" controls preload="auto" height="360"></video>
     </div>
     
     <!-- Container de canais e paginação -->
@@ -23,7 +23,7 @@
         <button id="upload-button" class="btn btn-primary">Upload Playlist</button>
       </div>
 
-      <!-- Primeira estrutura de paginação -->
+      <!-- Estrutura de paginação -->
       <nav aria-label="Page navigation" class="mt-4">
         <ul class="pagination justify-content-center" id="pagination">
           <li class="page-item">
@@ -44,28 +44,16 @@
         <!-- Cards serão inseridos dinamicamente aqui -->
       </div>
       
-      <!-- Segunda estrutura de paginação (duplicada) -->
-      <nav aria-label="Page navigation" class="mt-4">
-        <ul class="pagination justify-content-center" id="pagination-numbers">
-          <!-- Paginação numerada será inserida dinamicamente aqui -->
-        </ul>
-      </nav>
-      
-      <!-- Terceira estrutura de paginação (duplicada) -->
-      <nav aria-label="Page navigation" class="mt-4">
-        <ul class="pagination justify-content-center" id="pagination-duplicated">
-          <li class="page-item">
-            <button id="prev-page-dup" class="page-link" aria-label="Previous">
-              <span aria-hidden="true">&laquo; Anterior</span>
-            </button>
-          </li>
-          <li class="page-item">
-            <button id="next-page-dup" class="page-link" aria-label="Next">
-              <span aria-hidden="true">Próximo &raquo;</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
+  <!-- Paginação numerada será inserida dinamicamente -->
+<nav aria-label="Page navigation" class="mt-4">
+  <ul class="pagination justify-content-center" id="pagination-numbers">
+    <!-- Paginação numerada será inserida dinamicamente aqui -->
+  </ul>
+</nav>
+
+
+
+
     </div>
   </div>
 
@@ -76,16 +64,15 @@
     </div>
   </footer>
 
-  <!-- Include jQuery -->
+  <!-- Inclua jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Include Bootstrap JS -->
+  <!-- Inclua Bootstrap JS -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-  <!-- Include Video.js -->
+  <!-- Inclua Video.js -->
   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
-  <!-- Include upload.js -->
+  <!-- Inclua upload.js -->
   <script src="js/upload.js"></script>
-  <!-- Include pagination.js -->
+  <!-- Inclua pagination.js -->
   <script src="js/pagination.js"></script>
-
 </body>
 </html>
