@@ -41,6 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const worker = new Worker('worker.js');
+
+  // Mensagem quando o worker é iniciado
+  console.log('Worker created.');
+
+  worker.postMessage({ channels });
+  console.log('Message sent to worker.');
+
+  worker.onmessage = (event) => {
+    console.log('Message received from worker:', event.data);
+
+    channels = event.data.results.filter(channel => channel.status === true);
+    if (channels.length === 0) {
+      alert('Nenhum canal online encontrado.');
+    }
+    renderPage(1); // Renderiza a primeira página
+  };
+
+  worker.onerror = (error) => {
+    console.error('Worker error:', error.message);
+  };
+
   // Função para lidar com o clique no botão de upload
   document.getElementById('upload-button').addEventListener('click', () => {
     const file = document.getElementById('playlist').files[0];
@@ -207,6 +229,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    // Função para navegação por teclado
+    function handleKeyboardNavigation(event) {
+      if (event.key === 'ArrowLeft' && page > 1) {
+        renderPage(page - 1);
+      } else if (event.key === 'ArrowRight' && page < totalPages) {
+        renderPage(page + 1);
+      }
+    }
+
+    // Adiciona evento para navegação por teclado
+    document.addEventListener('keydown', handleKeyboardNavigation);
   }
 
   // Função para reproduzir um canal
