@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const worker = new Worker('worker.js');
+  const worker = new Worker('/js/worker.js');
 
   // Mensagem quando o worker é iniciado
   console.log('Worker created.');
