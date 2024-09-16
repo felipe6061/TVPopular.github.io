@@ -35,7 +35,7 @@ Este sistema é um reprodutor de vídeos com funcionalidades de streaming, focad
 - **upload.js**: Script para gerenciar o envio de arquivos via formulário.
 - **style.css**: Arquivo de estilos CSS para o design e responsividade da interface.
 
-Como Utilizar
+### Como Utilizar
 1. Clonar o Repositório
 
 Faça o clone do repositório para o seu ambiente local:
