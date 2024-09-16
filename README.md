@@ -1,103 +1,131 @@
-TV Popular 
-url - (https://tvstremingpopular2-3861e9c6feb3.herokuapp.com/)
+Projeto desenvolvido pelos alunos do curso técnico em Desenvolvimento de Sistemas no IFB.
 ---
 
-# Reprodutor de Vídeos com Streaming de Canais IPTV
+# TV Popular
 
-Este sistema é um reprodutor de vídeos com funcionalidades de streaming, focado na exibição de canais IPTV em uma interface de cards. Ele foi desenvolvido com base em bibliotecas como `video.js` para reprodução de vídeos e HLS (HTTP Live Streaming), além de outras tecnologias para criação de uma interface interativa e responsiva.
+**URL do projeto**: [TV Popular - Heroku](https://tvstremingpopular2-3861e9c6feb3.herokuapp.com/)
 
-## Funcionalidades Principais
+---
 
-### 1. Reprodutor de Vídeos
-- O sistema utiliza a biblioteca `video.js` para o reprodutor de vídeo, que oferece suporte para streaming de HLS.
-- O arquivo `channelRenderer.js` é responsável por configurar o reprodutor de vídeo, com opções como desativar a inicialização de vídeos em baixa qualidade.
+## 📺 Reprodutor de Vídeos com Streaming de Canais IPTV
 
-### 2. Interface de Usuário (UI)
-- A interface exibe uma lista de canais IPTV na forma de **cards**, cada um contendo uma imagem e informações do canal.
-- Os cards são criados dinamicamente por meio da função `createChannelCard(channel)`, que gera um card para cada canal com base nos dados fornecidos.
-- Cada card possui um design responsivo, com efeitos de hover (animação ao passar o mouse) e estilização CSS para adaptabilidade em diferentes dispositivos.
+Este projeto é um sistema de streaming que permite a exibição de canais IPTV através de uma interface dinâmica e amigável. Utilizando bibliotecas como `video.js` e HLS (HTTP Live Streaming), o sistema entrega uma experiência fluida e responsiva para usuários.
 
-### 3. Paginação
-- A navegação entre canais é feita com um sistema de paginação, que permite carregar e exibir canais por grupos.
-- As variáveis `currentPage`, `itemsPerPage` e `totalPages` controlam a página atual, a quantidade de itens por página e o total de páginas, respectivamente.
-- Os botões de “Próxima Página” e “Página Anterior” permitem navegar pelos canais de forma dinâmica, sem recarregar a página inteira.
+### 🚀 Funcionalidades Principais
 
-### 4. Upload de Arquivos
-- O sistema inclui uma funcionalidade de upload, onde os usuários podem enviar arquivos (como listas de canais) para o servidor através de um formulário.
-- O script `upload.js` gerencia esse processo, utilizando `fetch` para enviar o arquivo via POST, e exibe mensagens de sucesso ou erro dependendo da resposta do servidor.
+#### 1. **Reprodutor de Vídeos**
+- Utiliza a biblioteca `video.js` com suporte ao streaming HLS, garantindo reprodução de vídeos em alta qualidade.
+- O script `channelRenderer.js` configura o reprodutor, evitando a inicialização de vídeos em baixa qualidade.
 
-### 5. Status Online/Offline
-- O sistema monitora o status de conectividade do usuário (online ou offline) para garantir uma experiência adequada em situações de conexão instável.
+#### 2. **Interface de Usuário (UI)**
+- Apresenta uma lista de canais IPTV em formato de **cards**, que mostram uma imagem e informações detalhadas sobre cada canal.
+- Cards gerados dinamicamente com a função `createChannelCard(channel)`, tornando a interface interativa e customizável.
+- Design **responsivo** para diferentes tamanhos de tela, com efeitos de hover e animações CSS.
 
-## Estrutura dos Arquivos
-- **index.html**: Arquivo principal da página, contendo a estrutura básica da interface e referências aos scripts e estilos.
-- **channelRenderer.js**: Script responsável pela configuração do reprodutor de vídeo e pela renderização dos canais na interface.
-- **upload.js**: Script para gerenciar o envio de arquivos via formulário.
-- **style.css**: Arquivo de estilos CSS para o design e responsividade da interface.
+#### 3. **Paginação Dinâmica**
+- Sistema de navegação por **paginação**, permitindo exibir canais em grupos controlados por variáveis como `currentPage` e `itemsPerPage`.
+- Controles intuitivos para navegar entre os canais (Próxima/Anterior página).
 
-### Como Utilizar
-1. Clonar o Repositório
+#### 4. **Upload de Arquivos**
+- Função de upload para envio de arquivos, como listas de canais em formato M3U, via formulário.
+- Script `upload.js` gerencia o processo de upload e fornece feedback visual ao usuário sobre o status da operação.
 
-Faça o clone do repositório para o seu ambiente local:
+#### 5. **Status de Conectividade**
+- O sistema monitora o status de conectividade do usuário (online/offline), ajustando a experiência em caso de instabilidade.
 
-bash - git clone https://github.com/felipe6061/tvpopular.github.io.git
+---
 
-2. Acessar o Diretório do Projeto
+## 🗂️ Estrutura dos Arquivos
 
-Navegue até o diretório do projeto clonado:
+- **index.html**: Estrutura principal da página e ponto de entrada da interface.
+- **channelRenderer.js**: Renderiza os canais e configura o reprodutor de vídeo.
+- **upload.js**: Gerencia o upload de arquivos de lista de canais.
+- **style.css**: Arquivo de estilos para o design e a responsividade.
 
-bash - cd tvpopular.github.io
+---
 
-3. Instalar as Dependências
+## 📖 Como Utilizar
 
-Instale as dependências do projeto para garantir o funcionamento correto:
+### 1. Clonar o Repositório
 
-bash - npm install
+```bash
+git clone https://github.com/felipe6061/tvpopular.github.io.git
+```
 
-4. Executar o Servidor
+### 2. Acessar o Diretório do Projeto
 
-Inicie o servidor Node.js com o seguinte comando:
+```bash
+cd tvpopular.github.io
+```
 
-bash - npm start
+### 3. Instalar Dependências
 
-5. Acessar o Sistema
+Instale as dependências necessárias com o seguinte comando:
 
-Abra o navegador e acesse o seguinte endereço para visualizar o sistema funcionando:
+```bash
+npm install
+```
 
-http://localhost:3000
+### 4. Executar o Servidor
 
-6. Realizar Upload de Arquivo
+Para iniciar o servidor, utilize o comando:
 
-Para fazer o upload de um arquivo:
+```bash
+npm start
+```
 
-    Acesse o sistema via navegador.
-    Clique no botão de upload.
-    Selecione o arquivo desejado (ex: um arquivo M3U).
-    Aguarde a confirmação do envio e verifique os dados inseridos.
+### 5. Acessar o Sistema
 
-## Requisitos
-- Um navegador moderno com suporte para HTML5 e JavaScript.
-- Conexão à internet para streaming de canais IPTV.
+Abra seu navegador e vá para `http://localhost:3000` para acessar o sistema.
 
-## Tecnologias Utilizadas
-- **HTML5** para a estrutura da página.
-- **CSS3** para estilização e responsividade.
-- **JavaScript (ES6+)** para funcionalidades dinâmicas.
-- **video.js** para o reprodutor de vídeo com suporte a HLS.
-- **Fetch API** para o envio de arquivos ao servidor.
+### 6. Realizar Upload de Arquivos
 
-## Contribuição
-Se desejar contribuir para este projeto, sinta-se à vontade para abrir um pull request ou relatar problemas na aba de issues.
+1. Clique no botão de upload.
+2. Selecione o arquivo M3U desejado.
+3. Aguarde a confirmação de envio.
 
-Contato
+---
 
-Para mais informações, você pode entrar em contato com os desenvolvedores:
+## 📋 Requisitos
 
-    Felipe de Matos - felipe60061@estudante.ifb.edu.br
-    João Pedro - joao56418@estudante.ifb.edu.br
+- Navegador moderno com suporte a HTML5 e JavaScript.
+- Conexão estável à internet para streaming de IPTV.
 
-Muito obrigado!
+---
 
+## 🛠️ Tecnologias Utilizadas
 
+- **HTML5**: Estrutura da página.
+- **CSS3**: Estilização e design responsivo.
+- **JavaScript (ES6+)**: Funcionalidades dinâmicas e interatividade.
+- **video.js**: Reprodutor de vídeo com suporte a HLS.
+- **Fetch API**: Envio de arquivos ao servidor.
 
+---
 
+## 👥 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request ou relatar problemas na aba de issues.
+
+---
+
+## ✉️ Contato
+
+Para mais informações, entre em contato com os desenvolvedores:
+
+- **Felipe de Matos**: felipe60061@estudante.ifb.edu.br
+- **João Pedro**: joao56418@estudante.ifb.edu.br
+
+---
+
+Muito obrigado por utilizar o TV Popular!
+
+---
+
+### Melhoria Geral:
+
+1. **Estrutura do Conteúdo**: Organizei as informações em seções lógicas e claras, com subtítulos visuais e ícones para facilitar a navegação.
+2. **Instruções**: Tornei o processo de configuração mais intuitivo, com comandos em blocos de código.
+3. **Visualização**: O uso de ícones e negritos destaca funcionalidades e facilita a leitura rápida.
+
+Essas melhorias tornam o README mais acessível e informativo tanto para desenvolvedores quanto para usuários finais.
