@@ -1,0 +1,134 @@
+/* Fundo com degradê */
+body {
+  background: linear-gradient(to bottom, #121212, #000); /* Degradê vertical de preto para cinza escuro */
+}
+
+/* Container de formatação */
+.ag-format-container {
+  width: 100%; /* Largura total */
+  margin: 0 auto;
+  padding: 50px 15px; /* Espaçamento interno */
+}
+
+/* Cards */
+.ag-courses_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Espaçamento entre os cards */
+  justify-content: space-around; /* Alinhamento dos cards */
+}
+
+.ag-courses_item {
+  flex: 1 1 calc(25% - 30px); /* Tamanho dos cards */
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 28px;
+  position: relative;
+  transition: transform 0.3s ease-out; /* Transição suave para hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+}
+
+.ag-courses_item:hover {
+  transform: translateY(-10px); /* Efeito de levantar ao passar o mouse */
+}
+
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+}
+
+.ag-courses-item_link:hover {
+  color: #fff; /* Cor do texto alterada ao passar o mouse */
+}
+
+.ag-courses-item_title {
+  min-height: 60px; /* Altura mínima do título reduzida */
+  margin-bottom: 15px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.ag-courses-item_date-box {
+  font-size: 16px;
+  color: #fff;
+}
+
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  transition: transform 0.5s ease; /* Ajuste na transição */
+  z-index: 1;
+}
+
+.ag-courses_item:hover.ag-courses-item_bg {
+  transform: scale(1.5); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Cores diferentes para cada card */
+.ag-courses_box.ag-courses_item:nth-child(1).ag-courses-item_bg {
+  background-color: #f9b234;
+}
+
+.ag-courses_box.ag-courses_item:nth-child(2).ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+
+.ag-courses_box.ag-courses_item:nth-child(3).ag-courses-item_bg {
+  background-color: #e44002;
+}
+
+.ag-courses_box.ag-courses_item:nth-child(4).ag-courses-item_bg {
+  background-color: #952aff;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 1200px) {
+ .ag-courses_box.ag-courses_item {
+    flex: 1 1 calc(33.333% - 30px); /* Reduz o tamanho dos cards para três por linha */
+  }
+}
+
+@media only screen and (max-width: 992px) {
+ .ag-courses_box.ag-courses_item {
+    flex: 1 1 calc(50% - 30px); /* Reduz o tamanho dos cards para dois por linha */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+ .ag-courses_box.ag-courses_item {
+    flex: 1 1 calc(50% - 30px); /* Cards ocupam metade da largura */
+  }
+
+ .ag-courses_item.ag-courses-item_title {
+    font-size: 18px; /* Tamanho da fonte reduzido */
+    min-height: auto; /* Altura mínima removida */
+    margin-bottom: 10px;
+  }
+
+ .ag-courses_item.ag-courses-item_link {
+    padding: 20px;
+  }
+
+ .ag-courses_item.ag-courses-item_date-box {
+    font-size: 14px; /* Tamanho da fonte reduzido */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+ .ag-courses_box.ag-courses_item {
+    flex: 1 1 calc(100% - 30px); /* Cards ocupam toda a largura */
+  }
+}

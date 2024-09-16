@@ -1,0 +1,188 @@
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --image-height: 150px;
+  --content-padding: 10px;
+  --bg-color: #f5f5f5;
+  --border-color: #ddd;
+  --title-font-size: 16px;
+  --title-color: #333;
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --transition-duration: 0.2s;
+  --hover-scale: 1.05;
+  --status-font-size: 14px;
+  --status-padding: 8px;
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+  --active-color: #004085;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+}
+
+/* Estilo para o botão de upload */
+.btn-upload {
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-upload:hover {
+  background-color: #218838;
+}
+
+/* Estilo para o botão de atualizar */
+.btn-refresh {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-refresh:hover {
+  background-color: var(--hover-color);
+}
+
+/* Container flex para os botões */
+.button-group {
+  display: flex;
+  justify-content: center; /* Alinha os botões ao centro */
+  gap: 10px; /* Adiciona espaço entre os botões */
+}
+
+/* Estilo geral do formulário */
+#uploadForm {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilizando o input do arquivo */
+#fileInput {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilo para o status de upload */
+#uploadStatus {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilo para mensagens de erro */
+#uploadStatus.error {
+  color: var(--error-color);
+}
+
+#uploadStatus.success {
+  color: var(--success-color);
+}
+
+/* Estilo do contêiner de player fixo */
+#player-container {
+  position: relative; /* Ajusta o posicionamento */
+  z-index: 1; /* Garante que o player está no fundo */
+  background-color: white;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Estilo da seção de upload para evitar sobreposição */
+.upload-section {
+  position: relative;
+  z-index: 2; /* Garante que o formulário não sobreponha o player */
+}
+
+/* Estilo geral do card */
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin: 10px;
+  transition: transform var(--transition-duration), border-color var(--transition-duration);
+}
+
+/* Estilo para status online e offline */
+.card.online {
+  border-color: green;
+}
+
+.card.offline {
+  border-color: red;
+}
+
+.card:hover {
+  transform: scale(var(--hover-scale));
+}
+
+/* Estilo da imagem do canal */
+.card img {
+  width: 100%;
+  height: var(--image-height);
+  object-fit: cover;
+}
+
+/* Estilo do contêiner de conteúdo */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--content-padding);
+  height: calc(var(--card-height) - var(--image-height));
+  position: relative;
+}
+
+/* Estilo do título */
+.title {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  color: var(--title-color);
+}
+
+/* Estilo do fundo do card */
+.ag-courses-item_bg {
+  background-color: var(--bg-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Estilo do status para garantir visibilidade */
+.status {
+  font-size: var(--status-font-size);
+  text-align: center;
+  padding: var(--status-padding);
+  margin-top: auto;
+  color: var(--border-color);
+}
