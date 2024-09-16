@@ -35,21 +35,45 @@ Este sistema é um reprodutor de vídeos com funcionalidades de streaming, focad
 - **upload.js**: Script para gerenciar o envio de arquivos via formulário.
 - **style.css**: Arquivo de estilos CSS para o design e responsividade da interface.
 
-## Como Utilizar
+Como Utilizar
+1. Clonar o Repositório
 
-1. Clone o repositório para o seu ambiente local:
-   ```bash
-   git clone https://github.com/usuario/reprodutor-iptv.git
-   ```
+Faça o clone do repositório para o seu ambiente local:
 
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd reprodutor-iptv
-   ```
+bash - git clone https://github.com/felipe6061/tvpopular.github.io.git
 
-3. Abra o arquivo `index.html` em seu navegador para visualizar o sistema funcionando.
+2. Acessar o Diretório do Projeto
 
-4. Para realizar o upload de um arquivo, clique no botão de upload, selecione o arquivo desejado e aguarde a confirmação do envio.
+Navegue até o diretório do projeto clonado:
+
+bash - cd tvpopular.github.io
+
+3. Instalar as Dependências
+
+Instale as dependências do projeto para garantir o funcionamento correto:
+
+bash - npm install
+
+4. Executar o Servidor
+
+Inicie o servidor Node.js com o seguinte comando:
+
+bash - npm start
+
+5. Acessar o Sistema
+
+Abra o navegador e acesse o seguinte endereço para visualizar o sistema funcionando:
+
+http://localhost:3000
+
+6. Realizar Upload de Arquivo
+
+Para fazer o upload de um arquivo:
+
+    Acesse o sistema via navegador.
+    Clique no botão de upload.
+    Selecione o arquivo desejado (ex: um arquivo M3U).
+    Aguarde a confirmação do envio e verifique os dados inseridos.
 
 ## Requisitos
 - Um navegador moderno com suporte para HTML5 e JavaScript.
