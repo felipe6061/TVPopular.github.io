@@ -65,3 +65,15 @@ Este sistema é um reprodutor de vídeos com funcionalidades de streaming, focad
 ## Contribuição
 Se desejar contribuir para este projeto, sinta-se à vontade para abrir um pull request ou relatar problemas na aba de issues.
 
+Contato
+
+Para mais informações, você pode entrar em contato com os desenvolvedores:
+
+    Felipe de Matos - felipe60061@estudante.ifb.edu.br
+    João Pedro - joao56418@estudante.ifb.edu.br
+
+Muito obrigado!
+
+
+
+
